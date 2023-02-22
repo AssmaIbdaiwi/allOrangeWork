@@ -1,0 +1,69 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.container .generalcard {
+  width: 10rem;
+  height: 10rem;
+  border: 4px solid red;
+  margin: 1rem;
+  background-color: rgb(209, 137, 137);
+}
+.container .generalcard.card1 {
+  border: 4px solid aqua;
+}
+.container .generalcard.card2 {
+  border: 4px solid green;
+  background-color: rgb(248, 244, 11);
+}
+.container .stylenew {
+  background-color: rgb(5, 5, 5);
+}
+
+.ovalswitch {
+  border: solid 2px black;
+  border-radius: 20px;
+  width: 5rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.ovalswitch input {
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.ovalswitch input::before {
+  margin-top: 2px;
+  content: "";
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: black;
+  width: 1.1rem;
+  height: 1.1rem;
+  display: inline-block;
+  transition: 0.8s;
+  cursor: pointer;
+}
+.ovalswitch input::after {
+  content: "";
+  margin-left: 2.1rem;
+  border-radius: 50%;
+  width: 1.1rem;
+  height: 1.1rem;
+  display: inline-block;
+  cursor: pointer;
+  background-image: url("./assets/moon.png");
+  background-position: center;
+}
+.ovalswitch input:checked::after {
+  background-image: url("./assets/sun.png");
+  background-position: center;
+  margin-left: -20%;
+}
+.ovalswitch input:checked::before {
+  transform: translateX(50px);
+}

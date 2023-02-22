@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<style>
+    .changep2{
+    background: blue;
+}
+.changep1{
+    background: red;
+}
+
+
+.round_cont{
+    width: 120px;
+    height: 120px;
+    border: solid black 1px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .round_ani{
+        width: 100px;
+        height: 100px;
+        border: solid orange 3px ;
+        border-radius: 50%;
+    padding: 2%;
+    /* transition-timing-function:steps(10, ease);
+    transition-property: border-color, border-radius;
+    transition-duration: 1s; */
+animation-name: rounding;
+animation-timing-function: ease;
+animation-duration: 10s;
+transform-origin: 50% 50%;
+
+    }
+
+    /* .round_ani:hover{
+
+border-color: orange;
+    } */
+
+
+@keyframes rounding{
+ 
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+
+    
+}
+
+
+
+
+
+</style>
+<body>
+
+<div class="round_cont">
+    <div class="round_ani"></div>
+</div>
+
+
+
+
+
+
+
+
+    <!-- <p></p> -->
+<p id="one">one</p>
+<p id="two">two</p>
+<p id="three">three</p>
+<button id="welcome">click me</button>
+
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+
+<p id="changep"> hello word!</p>
+<button id="change">change style</button>
+<br>
+<br>
+
+<textarea name="" id="addtobtn" cols="30" rows="1"></textarea>
+<button id="txtbtn" >add text</button>
+<br>
+<br>
+
+<textarea name="" id="addtobtnlength" cols="30" rows="1"></textarea>
+<button id="txtlengthbtn" >count length </button>
+<div >the length is: <p id="ntxt"></p></div>
+<br>
+<br>
+
+<textarea name="" id="addtobtnlength2" cols="30" rows="1"></textarea>
+<div >the length is:  <p id="ntxt2"></p></div>
+
+
+
+
+
+
+
+<script>
+
+
+//ex 1
+ $(document).ready(function(){
+ $( document.body).add( "<span>Exercises</span>" ).appendTo( document.body );
+ $('span').addClass('red');
+ $('.red').css({'color':'red', 'background':'black'} ) ;
+ var color = $('.red');
+ $( '#one' ).append(color);
+ $( '#three' ).prepend(color);
+ $( '#two' ).before(color);
+
+//ex 2
+$('#welcome').click(function(){
+    alert('welcome')
+});
+
+//ex 3
+$('input').on({
+    focus:function(){
+        $(this).css("background","blue")
+    },
+    blur:function(){
+        $(this).css("background","black")
+    }
+    
+});
+//ex 4
+
+$("#change").click(function(){
+$('#changep').addClass('changep1');
+var presentClassName = $('#changep').attr('class');	
+
+if(presentClassName=='changep1'){
+	newClassName='changep2'
+}else{
+	newClassName='changep1'
+}
+
+$('#changep').removeClass(presentClassName).addClass(newClassName);
+});
+
+//ex 5
+
+$('#txtbtn').click(function(){
+var textval = $('#addtobtn').val();
+
+$('#txtbtn').text(textval)
+});
+
+//ex 6
+
+$('#txtlengthbtn').click(function(){
+    var lengthtxt= $('#addtobtnlength').val();
+    $('#ntxt').html(lengthtxt.length);
+});
+
+//ex 7
+
+$('#addtobtnlength2').keyup(function(){
+    var lengthtxt= $('#addtobtnlength2').val();
+    $('#ntxt2').html(lengthtxt.length);
+});
+
+
+
+//ex 8
+
+
+
+
+
+ });
+</script>
+</body>
+</html>

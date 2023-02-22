@@ -1,0 +1,113 @@
+*{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+
+.container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr  1fr 1fr ;
+    background-color: black;
+    overflow: auto;
+    gap: 1rem;
+.item{
+    width: 90%;
+    height: 90%;
+    background-color:  rgb(18, 235, 235);
+    text-align: center;
+    border: 1px solid rgb(255, 255, 255);
+    margin: 1rem 1rem ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-size: 4rem;
+ box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, 0.473);
+cursor: pointer;
+
+
+}
+:nth-child(1){
+    // background-color: red;
+background-image: url('http://www.studentuniverse.com/blog/wp-content/uploads/2014/04/Santorini-Greece.jpg');
+background-size: contain;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+// width: 95%;
+// grid-area: 1 / 1 / 1/ 3;
+
+   
+}
+
+:nth-child(2){
+    // background-color: rgb(23, 156, 18);
+    background-image: url('https://handluggageonly.co.uk/wp-content/uploads/2018/12/Hand-Luggage-Only-10-5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+:nth-child(3){
+    // background-color: rgb(18, 32, 156);
+    background-image: url('https://hcmcpianofestival.com/en/wp-content/uploads/2022/09/italy-best-places-to-visit-rome-colosseum.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+:nth-child(4){
+    // background-color: blueviolet;
+    background-image: url('https://www.expatica.com/app/uploads/sites/6/2014/05/places-to-visit-in-germany.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+:nth-child(5){
+    // background-color: blueviolet;
+    background-image: url('https://washingtonindependent.com/wp-content/uploads/2022/07/2507999ca093bbb6/eiffel-tower-france.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+:nth-child(6){
+    // background-color: rgb(235, 18, 206);
+    background-image: url('https://images.unsplash.com/photo-1551749005-6b94ff060954?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhdXRpZnVsJTIwcGxhY2VzfGVufDB8fDB8fA%3D%3D&w=1000&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+}
+
+
+
+@media screen and (min-width:481px) and (max-width:768px)
+
+{
+    .container{
+        grid-template-columns: 1fr 1fr ;
+    }
+}
+
+@media screen and (max-width:480px)
+
+{
+    .container{
+        grid-template-columns: 1fr  ;
+        overflow:scroll;
+
+.item{
+    height: 15rem;
+}
+       
+        
+    }
+}
